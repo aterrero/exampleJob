@@ -12,7 +12,7 @@ spark = SparkSession\
         .getOrCreate()
 
     #Data loading and preprocessing
-data = spark.read.csv("/nbashottest3.csv")
+data = spark.read.csv("/root/exampleJob/nbashottest3.csv")
 data2 = data.rdd.map(lambda x: (x._c19, x._c13, x._c8, x._c11, x._c16)).toDF()
 data3 = data2.fillna("0")
 
